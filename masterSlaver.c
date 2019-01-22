@@ -41,22 +41,22 @@ int result2 = 2;
     MPI_Recv(&result2, 1, MPI_INT, 2, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
     printf(" \n receiving from p2 = %d\n", result2);
 
-  } else if (world_rank = 1) {
+  } else if (world_rank == 1) {
 
 	int subtask; 
   MPI_Recv(&subtask, 1, MPI_INT, 0, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-  printf("i am process %d", world_rank, "i have received data from master");
+  printf("i am process %d i have received data from master", world_rank);
 
   subtask = world_rank +subtask;
   MPI_Send(&subtask, 1, MPI_INT, 0, 0, MPI_COMM_WORLD);
  
   }
 
- else if (world_rank = 2) {
+ else if (world_rank == 2) {
 
 	int subtask; 
   MPI_Recv(&subtask, 1, MPI_INT, 0, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-  printf("i am process %d", world_rank, "i have received data from master");
+  printf("i am process %d i have received data from master", world_rank);
 
   subtask = world_rank +subtask;
   MPI_Send(&subtask, 1, MPI_INT, 0, 0, MPI_COMM_WORLD);
